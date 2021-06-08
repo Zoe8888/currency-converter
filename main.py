@@ -29,10 +29,22 @@ def convert():
     answer.config(text=result)
 
 
+def delete():
+    amount_entry.delete(0, END)
+    amount_entry.focus()
+    currency_entry.delete(0, END)
+
+
 button = Button(root, text='Convert to US Dollars', command=convert, bg='#4ad66d')
 button.place(relx=0.29, rely=0.55)
 
 answer = Label(root, width=25)
 answer.place(relx=0.25, rely=0.7)
+
+clear = Button(root, text='Clear', command=delete, bg='#4ad66d', width=8)
+clear.place(relx=0.25, rely=0.84)
+
+exit = Button(root, text='Exit', command=exit, bg='#4ad66d', width=8)
+exit.place(relx=0.54, rely=0.84)
 
 root.mainloop()
