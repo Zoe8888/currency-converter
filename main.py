@@ -14,8 +14,8 @@ amount.place(relx=0.16, rely=0.1)
 amount_entry = Entry(root, width=25, bg='#e4e4e0')
 amount_entry.place(relx=0.25, rely=0.2)
 
-currency = Label(root, text='Enter the currency code you wish to convert: ', bg='#4ad66d')
-currency.place(relx=0.16, rely=0.3)
+currency = Label(root, text='Enter the currency code you wish to convert from: ', bg='#4ad66d')
+currency.place(relx=0.10, rely=0.3)
 
 currency_entry = Entry(root, width=25, bg='#e4e4e0')
 currency_entry.place(relx=0.25, rely=0.4)
@@ -25,7 +25,6 @@ def convert():
     api = "https://v6.exchangerate-api.com/v6/4a704b6911da3fab9b1df53d/latest/" + currency_entry.get()
     data = requests.get(api).json()
     result = int(amount_entry.get()) * data['conversion_rates']['USD']
-    print(result)
     answer.config(text=result)
 
 
